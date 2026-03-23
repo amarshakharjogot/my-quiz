@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ফলাফল</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .card { background: white; padding: 40px; border-radius: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); text-align: center; width: 90%; max-width: 400px; }
+        .score-box { width: 130px; height: 130px; line-height: 130px; border-radius: 50%; font-size: 36px; font-weight: bold; color: white; margin: 20px auto; border: 8px solid #f8f9fa; }
+        h2 { color: #333; margin: 0; }
+        input { width: 100%; padding: 14px; border-radius: 12px; border: 2px solid #eee; margin: 20px 0; box-sizing: border-box; outline: none; }
+        .btn { display: block; background: #28a745; color: white; padding: 15px; text-decoration: none; border-radius: 12px; font-weight: bold; border: none; width: 100%; cursor: pointer; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <i class="fas fa-trophy" style="font-size: 50px; color: #ffc107; margin-bottom: 15px;"></i>
+        <h2>কুইজ শেষ!</h2>
+        <div class="score-box" style="background: {{ color }};">{{ score }}/{{ total }}</div>
+        <form action="/save_score" method="POST">
+            <input type="text" name="user_name" placeholder="আপনার ডাক নাম লিখুন" required>
+            <button type="submit" class="btn">স্কোর সেভ করুন <i class="fas fa-save"></i></button>
+        </form>
+        <br>
+        <a href="/" style="color: #888; text-decoration: none; font-size: 14px;">স্কোর না দিয়ে ফিরে যান</a>
+    </div>
+</body>
+</html>

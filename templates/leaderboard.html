@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <title>সেরা ১০ বিজয়ী</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f0f2f5; display: flex; justify-content: center; padding: 40px 20px; margin: 0; }
+        .board { background: white; padding: 30px; border-radius: 25px; width: 100%; max-width: 450px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h2 { text-align: center; color: #333; margin-bottom: 25px; }
+        table { width: 100%; border-collapse: collapse; }
+        th { text-align: left; color: #888; font-size: 14px; padding: 10px; border-bottom: 2px solid #f8f9fa; }
+        td { padding: 15px 10px; border-bottom: 1px solid #f8f9fa; font-weight: 500; }
+        .rank { font-weight: bold; color: #28a745; width: 30px; }
+        .cat-tag { font-size: 10px; background: #e8f5e9; color: #28a745; padding: 3px 8px; border-radius: 10px; text-transform: uppercase; }
+        .back-home { display: block; text-align: center; margin-top: 25px; color: #28a745; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="board">
+        <h2><i class="fas fa-crown" style="color:#ffc107"></i> লিডারবোর্ড</h2>
+        <table>
+            <thead><tr><th>#</th><th>নাম</th><th>স্কোর</th></tr></thead>
+            <tbody>
+                {% for s in scores %}
+                <tr>
+                    <td class="rank">{{ loop.index }}</td>
+                    <td>{{ s.name }} <br> <span class="cat-tag">{{ s.category }}</span></td>
+                    <td style="font-size: 18px;">{{ s.score }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/" class="back-home"><i class="fas fa-home"></i> হোম পেজে ফিরুন</a>
+    </div>
+</body>
+</html>
