@@ -1,0 +1,5 @@
+Apple:আপেল
+Mango:আম
+Banana:কলা
+Jakfuruts:কাঠাল
+Lici:লিচু
